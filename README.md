@@ -113,6 +113,12 @@ teilt.
   Ansehen aus. Wird ein Link zurückgezogen, werden alle, die über ihn verbunden
   sind, sofort getrennt, und er wird nie wieder gültig. Mit
   `BLANKR_GAESTE=nein` brauchen auch Link-Inhaber ein Konto.
+- **SSO** – Unter *Konto → Anmeldung (SSO)* trägt ein Administrator einen
+  OpenID-Connect-Anbieter wie Keycloak ein (Aussteller, Client-ID,
+  Client-Geheimnis, auf Wunsch erlaubte Konten). Die Anmeldeseite bietet dann
+  *Mit SSO anmelden* an; das Konto wird über die vom Anbieter bestätigte
+  E-Mail-Adresse gefunden oder angelegt. Weiterleitung beim Anbieter:
+  `https://<blankr>/sso/zurueck`. `BLANKR_SSO_AUS=1` schaltet SSO im Notfall ab.
 - **Ausscheidende Mitarbeiter** – Beim Löschen eines Kontos durch einen
   Administrator gehen dessen Boards an den Administrator über, statt zu
   verschwinden.

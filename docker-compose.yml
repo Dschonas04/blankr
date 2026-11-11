@@ -19,9 +19,13 @@ services:
       BLANKR_HINTER_PROXY: ${BLANKR_HINTER_PROXY:-nein}
       BLANKR_SICHERES_COOKIE: ${BLANKR_SICHERES_COOKIE:-nein}
       BLANKR_METRIKEN: ${BLANKR_METRIKEN:-nein}
+      # SSO richtet ein Administrator unter Konto → Anmeldung (SSO) ein; 1 schaltet es im Notfall ab.
+      BLANKR_SSO_AUS: ${BLANKR_SSO_AUS:-}
     volumes:
       # Ohne dieses Volume waeren alle Boards nach einem Neuaufbau weg.
       - blankr-data:/data
+      # Zertifikate des Wirts, damit SSO einen Anbieter mit eigener CA erreicht.
+      - ${CA_ZERTIFIKATE:-/etc/ssl/certs/ca-certificates.crt}:/etc/ssl/certs/ca-certificates.crt:ro
     healthcheck:
       test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080/healthz"]
       interval: 30s

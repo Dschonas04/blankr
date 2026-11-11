@@ -86,6 +86,7 @@ type server struct {
 	apiBremse     *Bremse
 	anmeldeBremse *Bremse
 	upgrader      websocket.Upgrader
+	sso           *SSO
 }
 
 func neuerServer(cfg config) (*server, error) {
@@ -108,6 +109,11 @@ func neuerServer(cfg config) (*server, error) {
 		// Anmeldung: ein Versuch alle sechs Sekunden, zehn auf Vorrat.
 		anmeldeBremse: NeueBremse(1.0/6, 10),
 	}
+	// SSO richtet ein Administrator unter „Konto → Anmeldung (SSO)“ ein;
+	// BLANKR_SSO_AUS=1 schaltet es im Notfall ab.
+	s.sso = NeuesSSO("Blankr", filepath.Join(cfg.daten, "sso.json"), "BLANKR_SSO_AUS")
+	s.sso.Sperre = false
+	s.sso.Anmelden = s.ssoAnmelden
 	s.upgrader = websocket.Upgrader{
 		ReadBufferSize:  4096,
 		WriteBufferSize: 4096,
@@ -173,6 +179,9 @@ func (s *server) routen() http.Handler {
 	mux.HandleFunc("/api/admin/konten/", s.nurAdmin(s.adminKonto))
 	mux.HandleFunc("/api/admin/sicherung", s.nurAdmin(s.sicherung))
 	mux.HandleFunc("/api/rechtliches/", s.rechtliches)
+	s.sso.Wege(mux, func(h http.HandlerFunc) http.HandlerFunc {
+		return s.nurAdmin(func(w http.ResponseWriter, r *http.Request) { h(w, r) })
+	})
 
 	mux.HandleFunc("/api/boards", s.nurMitKonto(s.boards))
 	mux.HandleFunc("/api/boards/", s.nurMitKonto(s.board))
