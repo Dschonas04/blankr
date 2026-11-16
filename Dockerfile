@@ -17,7 +17,7 @@ COPY shared/ ../shared/
 COPY server/ ./
 # Statisch gelinkt, damit das Ergebnis ohne libc auskommt und in ein
 # leeres Image passt.
-ARG VERSION=1.0.0
+ARG VERSION=1.1.0
 RUN CGO_ENABLED=0 go build -trimpath -ldflags="-s -w -X main.version=${VERSION}" -o /blankr .
 
 # --- Auslieferung ---
