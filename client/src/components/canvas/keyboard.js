@@ -1,4 +1,4 @@
-// Canvas — Tastatur, Zwischenablage und Einfuegen
+// Canvas: Tastatur, Zwischenablage und Einfuegen
 //
 // Herausgeloest aus events.js: dieser Teil kommt mit vier Beruehrungspunkten
 // zur Zeichenschleife aus (canvas, dpr, Neuzeichnen anfordern, Space-Taste)

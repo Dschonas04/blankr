@@ -1,4 +1,4 @@
-# Blankr – Whiteboard
+# Blankr: Whiteboard
 
 <img src="docs/logo.svg" alt="" width="96" align="right">
 
@@ -10,7 +10,7 @@
 
 Blankr ist eine kollaborative, browserbasierte Whiteboard-Anwendung. Sie nutzt React 19 (Vite 8) als Frontend und einen Go-Server mit WebSockets für Echtzeit-Zusammenarbeit. Alles läuft komplett containerisiert über Docker.
 
-Boards liegen auf dem Server und überstehen einen Neustart. Gleichzeitiges Bearbeiten wird über einen CRDT zusammengeführt, nicht über ein einfaches Weiterreichen von Ereignissen — auch nach einem Verbindungsabbruch sehen alle Beteiligten wieder denselben Stand.
+Boards liegen auf dem Server und überstehen einen Neustart. Gleichzeitiges Bearbeiten wird über einen CRDT zusammengeführt, nicht über ein einfaches Weiterreichen von Ereignissen, auch nach einem Verbindungsabbruch sehen alle Beteiligten wieder denselben Stand.
 
 ## Inhalt
 
@@ -28,68 +28,68 @@ Boards liegen auf dem Server und überstehen einen Neustart. Gleichzeitiges Bear
 ## Features
 
 ### Zeichenwerkzeuge
-- **Stift** – Freihandzeichnen mit konfigurierbarer Strichstärke
-- **Linie / Pfeil** – Gerade Linien und Pfeile im draw.io-Stil (offene V-Pfeilspitzen)
-- **Rechteck / Kreis** – Geometrische Formen, optional mit Füllung
-- **Dreieck / Raute / Stern / Hexagon** – Weitere Polygon-Formen mit Füllung
-- **Text** – WYSIWYG-Inline-Editor mit formatierter Textbearbeitung (Fett, Kursiv, Schriftgröße)
-- **Text auf Formen** – Doppelklick auf Formen fügt ein zentriertes Label hinzu
-- **Rahmen (Frame)** – Benannte Bereiche auf dem Canvas zur Organisation
-- **Radierer** – Objekt-basierter Radierer (entfernt ganze Strokes per Klick/Ziehen)
-- **Laser-Pointer** – Roter Laser-Cursor mit verblassender Spur
-- **Connector** – Verbindungspfeile zwischen Objekten mit automatischem Anchor-Snapping
+- **Stift**: Freihandzeichnen mit konfigurierbarer Strichstärke
+- **Linie / Pfeil**: Gerade Linien und Pfeile im draw.io-Stil (offene V-Pfeilspitzen)
+- **Rechteck / Kreis**: Geometrische Formen, optional mit Füllung
+- **Dreieck / Raute / Stern / Hexagon**, Weitere Polygon-Formen mit Füllung
+- **Text**: WYSIWYG-Inline-Editor mit formatierter Textbearbeitung (Fett, Kursiv, Schriftgröße)
+- **Text auf Formen**: Doppelklick auf Formen fügt ein zentriertes Label hinzu
+- **Rahmen (Frame)**: Benannte Bereiche auf dem Canvas zur Organisation
+- **Radierer**: Objekt-basierter Radierer (entfernt ganze Strokes per Klick/Ziehen)
+- **Laser-Pointer**: Roter Laser-Cursor mit verblassender Spur
+- **Connector**: Verbindungspfeile zwischen Objekten mit automatischem Anchor-Snapping
 
 ### Auswahl & Bearbeitung
-- **Multi-Select** – Shift+Klick oder Gummiband-Auswahl für mehrere Objekte
-- **Verschieben** – Alle ausgewählten Objekte gleichzeitig per Drag & Drop bewegen
-- **Größe ändern** – Eck-Handles zum Skalieren (bei Einzelauswahl)
-- **Drehen** – Rotations-Handle für beliebige Drehwinkel
-- **Endpunkte ziehen** – Anfangs-/Endpunkte von Linien, Pfeilen und Connectoren einzeln verschieben
-- **Farbe ändern** – Farbauswahl wirkt auf alle ausgewählten Objekte
-- **Kopieren / Einfügen / Duplizieren** – `Ctrl+C/V/D` für Zwischenablage-Operationen
-- **Ausschneiden** – `Ctrl+X` zum Ausschneiden
-- **Pfeil-Nudging** – Pfeiltasten verschieben Auswahl um 1px, mit Shift um 10px
-- **Löschen** – Auswahl mit `Delete`/`Backspace` entfernen
-- **Z-Order** – `Ctrl+]`/`[` zum Nach-vorne/hinten-Schieben
-- **Gruppieren / Auflösen** – `Ctrl+G` / `Ctrl+Shift+G`
-- **Rechtsklick-Kontextmenü** – Schnellzugriff auf alle Bearbeitungsaktionen
-- **Alignment Guides** – Automatische Ausrichtungshilfen beim Verschieben
-- **Raster-Snapping** – Optionales Einrasten am Raster
+- **Multi-Select**: Shift+Klick oder Gummiband-Auswahl für mehrere Objekte
+- **Verschieben**: Alle ausgewählten Objekte gleichzeitig per Drag & Drop bewegen
+- **Größe ändern**: Eck-Handles zum Skalieren (bei Einzelauswahl)
+- **Drehen**: Rotations-Handle für beliebige Drehwinkel
+- **Endpunkte ziehen**: Anfangs-/Endpunkte von Linien, Pfeilen und Connectoren einzeln verschieben
+- **Farbe ändern**: Farbauswahl wirkt auf alle ausgewählten Objekte
+- **Kopieren / Einfügen / Duplizieren**, `Ctrl+C/V/D` für Zwischenablage-Operationen
+- **Ausschneiden**: `Ctrl+X` zum Ausschneiden
+- **Pfeil-Nudging**: Pfeiltasten verschieben Auswahl um 1px, mit Shift um 10px
+- **Löschen**: Auswahl mit `Delete`/`Backspace` entfernen
+- **Z-Order**: `Ctrl+]`/`[` zum Nach-vorne/hinten-Schieben
+- **Gruppieren / Auflösen**: `Ctrl+G` / `Ctrl+Shift+G`
+- **Rechtsklick-Kontextmenü**: Schnellzugriff auf alle Bearbeitungsaktionen
+- **Alignment Guides**: Automatische Ausrichtungshilfen beim Verschieben
+- **Raster-Snapping**: Optionales Einrasten am Raster
 
 ### Canvas & Navigation
-- **Zoom & Pan** – Mausrad-Zoom, Hand-Tool und Space-Drag
-- **Pinch-to-Zoom** – Touch-Gesten auf mobilen Geräten
-- **Hintergrundmuster** – Punkte, Raster, Linien oder leer
-- **HiDPI-Support** – Scharfes Rendering auf Retina-Displays (`devicePixelRatio`)
+- **Zoom & Pan**: Mausrad-Zoom, Hand-Tool und Space-Drag
+- **Pinch-to-Zoom**: Touch-Gesten auf mobilen Geräten
+- **Hintergrundmuster**: Punkte, Raster, Linien oder leer
+- **HiDPI-Support**: Scharfes Rendering auf Retina-Displays (`devicePixelRatio`)
 
 ### Organisation
-- **Layer-System** – Ebenen-Panel zur Organisation von Zeichnungen mit Sichtbarkeit und Deckkraft
-- **Sticky Notes** – Farbige Haftnotizen direkt auf dem Whiteboard
-- **Undo / Redo** – bis zu 50 Schritte, auch für gezeichnete Striche
+- **Layer-System**: Ebenen-Panel zur Organisation von Zeichnungen mit Sichtbarkeit und Deckkraft
+- **Sticky Notes**: Farbige Haftnotizen direkt auf dem Whiteboard
+- **Undo / Redo**: bis zu 50 Schritte, auch für gezeichnete Striche
 
 ### Import & Export
-- **PNG** – Pixel-Export mit korrektem Hintergrund
-- **JPEG** – Komprimierter Bild-Export
-- **SVG** – Vektorgrafik-Export mit allen Formen und Pfeilen
-- **JSON** – Projekt speichern und laden (vollständiger State-Export/Import)
-- **Bild einfügen** – `Ctrl+V` zum Einfügen von Bildern aus der Zwischenablage
-- **Drucken / PDF** – Über den Browser-Druckdialog
+- **PNG**: Pixel-Export mit korrektem Hintergrund
+- **JPEG**: Komprimierter Bild-Export
+- **SVG**: Vektorgrafik-Export mit allen Formen und Pfeilen
+- **JSON**: Projekt speichern und laden (vollständiger State-Export/Import)
+- **Bild einfügen**: `Ctrl+V` zum Einfügen von Bildern aus der Zwischenablage
+- **Drucken / PDF**: Über den Browser-Druckdialog
 
 ### Boards und Zusammenarbeit
-- **Benannte Boards** – anlegen, umbenennen, löschen; die Liste zeigt, wer gerade online ist
-- **Serverseitige Persistenz** – jedes Board liegt als JSON-Datei auf der Platte und ist nach einem Neustart wieder da
-- **CRDT-Zusammenführung** – gleichzeitiges Zeichnen, Verschieben und Löschen läuft zusammen, statt sich zu überschreiben
-- **Automatisches Wiederverbinden** – nach einem Aussetzer wird der vollständige Stand neu abgeglichen
-- **Rückgängig ohne Kollateralschaden** – Strg+Z nimmt nur die eigenen Änderungen zurück, nicht die der anderen
-- **Freigabe-Links** – je Board ein Link zum Bearbeiten und einer zum Ansehen, einzeln zurückziehbar
-- **Nutzerfarben, Remote-Cursor und Chat** – wie gehabt
+- **Benannte Boards**: anlegen, umbenennen, löschen; die Liste zeigt, wer gerade online ist
+- **Serverseitige Persistenz**: jedes Board liegt als JSON-Datei auf der Platte und ist nach einem Neustart wieder da
+- **CRDT-Zusammenführung**: gleichzeitiges Zeichnen, Verschieben und Löschen läuft zusammen, statt sich zu überschreiben
+- **Automatisches Wiederverbinden**: nach einem Aussetzer wird der vollständige Stand neu abgeglichen
+- **Rückgängig ohne Kollateralschaden**: Strg+Z nimmt nur die eigenen Änderungen zurück, nicht die der anderen
+- **Freigabe-Links**: je Board ein Link zum Bearbeiten und einer zum Ansehen, einzeln zurückziehbar
+- **Nutzerfarben, Remote-Cursor und Chat**: wie gehabt
 
 ### Weitere Features
-- **Dark Mode** – Umschalten zwischen hellem und dunklem Design mit automatischer Farbanpassung (dunkle Strokes werden im Dark Mode invertiert)
-- **Fullscreen** – Vollbild-Modus mit Auto-Hide der UI
-- **Drag & Drop Bilder** – Bilder direkt auf das Canvas ziehen
-- **Autosave** – Automatisches Speichern im `localStorage`
-- **Touch-Support** – Vollständige Touch-Unterstützung inkl. Pinch-Zoom
+- **Dark Mode**: Umschalten zwischen hellem und dunklem Design mit automatischer Farbanpassung (dunkle Strokes werden im Dark Mode invertiert)
+- **Fullscreen**: Vollbild-Modus mit Auto-Hide der UI
+- **Drag & Drop Bilder**: Bilder direkt auf das Canvas ziehen
+- **Autosave**: Automatisches Speichern im `localStorage`
+- **Touch-Support**: Vollständige Touch-Unterstützung inkl. Pinch-Zoom
 
 ## Konten, Rechte und Freigaben
 
@@ -102,18 +102,18 @@ teilt.
 | **Administrator** | alles, was Nutzer dürfen; dazu alle Boards sehen und verwalten, Konten anlegen, sperren, Passwörter setzen und löschen, Impressum und Datenschutzerklärung pflegen, Datensicherung herunterladen |
 | **Nutzer** | eigene Boards anlegen, umbenennen, löschen und teilen; eigenes Konto verwalten, Daten exportieren, Konto löschen |
 | **Gast mit Bearbeiten-Link** | das eine Board bearbeiten, ohne Konto |
-| **Gast mit Ansehen-Link** | das eine Board live mitverfolgen, ohne etwas ändern zu können – auch der Server verwirft jede Änderung |
+| **Gast mit Ansehen-Link** | das eine Board live mitverfolgen, ohne etwas ändern zu können, auch der Server verwirft jede Änderung |
 
-- **Einrichtung** – Beim ersten Aufruf fragt Blankr nach dem ersten Konto; es
+- **Einrichtung**: Beim ersten Aufruf fragt Blankr nach dem ersten Konto; es
   wird Administrator. Boards aus der Zeit vor den Konten gehen an dieses Konto.
-- **Registrierung** – standardmäßig geschlossen. Konten legt ein Administrator
+- **Registrierung**: standardmäßig geschlossen. Konten legt ein Administrator
   unter *Konto → Konten* an; mit `BLANKR_REGISTRIERUNG=offen` darf sich jeder
   selbst registrieren.
-- **Freigaben** – *Teilen* stellt einen Link zum Bearbeiten und einen zum
+- **Freigaben**: *Teilen* stellt einen Link zum Bearbeiten und einen zum
   Ansehen aus. Wird ein Link zurückgezogen, werden alle, die über ihn verbunden
   sind, sofort getrennt, und er wird nie wieder gültig. Mit
   `BLANKR_GAESTE=nein` brauchen auch Link-Inhaber ein Konto.
-- **SSO** – Unter *Konto → Anmeldung (SSO)* trägt ein Administrator einen
+- **SSO**: Unter *Konto → Anmeldung (SSO)* trägt ein Administrator einen
   OpenID-Connect-Anbieter wie Keycloak ein (Aussteller, Client-ID,
   Client-Geheimnis, auf Wunsch erlaubte Konten). Die Anmeldeseite bietet dann
   *Mit SSO anmelden* an; das Konto wird über die vom Anbieter bestätigte
@@ -121,7 +121,7 @@ teilt.
   Neue Konten legt SSO nur an, wenn die Registrierung offen ist oder eine
   Freigabeliste gesetzt ist. Weiterleitung beim Anbieter:
   `https://<blankr>/sso/zurueck`. `BLANKR_SSO_AUS=1` schaltet SSO im Notfall ab.
-- **Ausscheidende Mitarbeiter** – Beim Löschen eines Kontos durch einen
+- **Ausscheidende Mitarbeiter**: Beim Löschen eines Kontos durch einen
   Administrator gehen dessen Boards an den Administrator über, statt zu
   verschwinden.
 
@@ -138,7 +138,7 @@ teilt.
 | `BLANKR_SITZUNG_TAGE` | `14` | Laufzeit einer Anmeldung; wird bei Nutzung verlängert |
 | `BLANKR_HINTER_PROXY` | `nein` | `ja`: `X-Forwarded-For`/`-Proto` des Reverse Proxy auswerten |
 | `BLANKR_SICHERES_COOKIE` | `nein` | `ja`: Sitzungs-Cookie immer mit `Secure` |
-| `BLANKR_HERKUENFTE` | – | weitere erlaubte Origins für WebSockets, kommagetrennt |
+| `BLANKR_HERKUENFTE` |: | weitere erlaubte Origins für WebSockets, kommagetrennt |
 | `BLANKR_METRIKEN` | `nein` | `ja`: Prometheus-Metriken unter `/metrics` |
 
 ### Im Internet betreiben
@@ -163,12 +163,12 @@ location / {
 
 ### Datensicherung
 
-- **Über die Oberfläche** – *Konto → Sicherung* lädt das Datenverzeichnis als
+- **Über die Oberfläche**: *Konto → Sicherung* lädt das Datenverzeichnis als
   `tar.gz` (vorher werden alle offenen Boards geschrieben; Sitzungen sind nicht
   enthalten).
-- **Auf dem Host** – das Volume `blankr-data` sichern, z. B.
+- **Auf dem Host**: das Volume `blankr-data` sichern, z. B.
   `docker run --rm -v blankr-data:/d -v "$PWD":/b alpine tar czf /b/blankr.tar.gz -C /d .`
-- **Wiederherstellen** – Dienst stoppen, Archiv in das Datenverzeichnis
+- **Wiederherstellen**: Dienst stoppen, Archiv in das Datenverzeichnis
   entpacken, Dienst starten. Alle melden sich neu an.
 
 ### Datenschutz und Rechtliches
@@ -193,15 +193,15 @@ Meldeweg für Lücken: [SECURITY.md](SECURITY.md).
 
 ### Laufzeit
 
-- **Health-Check** – `/healthz` meldet Anzahl der Boards und offenen Sitzungen
-- **Restart-Policy** – der Container startet nach einem Ausfall selbst neu
-- **Datenvolume** – Boards liegen unter `/data` (`BLANKR_DATA`); ohne eingebundenes
+- **Health-Check**: `/healthz` meldet Anzahl der Boards und offenen Sitzungen
+- **Restart-Policy**: der Container startet nach einem Ausfall selbst neu
+- **Datenvolume**: Boards liegen unter `/data` (`BLANKR_DATA`); ohne eingebundenes
   Volume sind sie beim nächsten Image-Build weg
-- **Geordnetes Beenden** – bei `SIGTERM` werden offene Boards noch geschrieben
+- **Geordnetes Beenden**: bei `SIGTERM` werden offene Boards noch geschrieben
 
 **Nur eine Instanz.** Der Board-Zustand liegt im Speicher des jeweiligen
 Prozesses. Zwei Repliken hinter einem Load Balancer würden zwei getrennte
-Wahrheiten führen — dafür bräuchte es einen gemeinsamen Nachrichtenbus.
+Wahrheiten führen: dafür bräuchte es einen gemeinsamen Nachrichtenbus.
 
 ## Schnellstart
 
@@ -226,7 +226,7 @@ cd server && go run .          # bedient :8080 samt Frontend aus client/dist
 ```
 
 Für die Frontend-Entwicklung mit Neuladen zusätzlich `cd client && npm run dev`
-— der Vite-Server auf :5173 reicht `/api` und `/ws` an den Go-Server weiter.
+- der Vite-Server auf :5173 reicht `/api` und `/ws` an den Go-Server weiter.
 
 ### Stoppen
 
@@ -273,13 +273,13 @@ docker compose down
 ## Architektur
 
 ### Tech-Stack
-- **Frontend** – React 19, Vite 8, HTML5 Canvas 2D
-- **Backend** – Go 1.26, `gorilla/websocket`, `golang.org/x/crypto/bcrypt`, sonst nur Standardbibliothek
-- **Runtime** – statisch gelinkte Binärdatei in Alpine, Docker
-- **State** – Custom Store mit `useSyncExternalStore` (kein Redux/Zustand)
-- **Synchronisation** – LWW-Element-Set, zweimal implementiert (JS und Go),
+- **Frontend**: React 19, Vite 8, HTML5 Canvas 2D
+- **Backend**: Go 1.26, `gorilla/websocket`, `golang.org/x/crypto/bcrypt`, sonst nur Standardbibliothek
+- **Runtime**: statisch gelinkte Binärdatei in Alpine, Docker
+- **State**: Custom Store mit `useSyncExternalStore` (kein Redux/Zustand)
+- **Synchronisation**: LWW-Element-Set, zweimal implementiert (JS und Go),
   abgesichert über gemeinsame Testvektoren
-- **Ablage** – JSON-Dateien, atomar geschrieben (keine Datenbank)
+- **Ablage**: JSON-Dateien, atomar geschrieben (keine Datenbank)
 
 ### Canvas-Modul
 Die Canvas-Logik ist in eigenständige Module aufgeteilt:
@@ -355,7 +355,7 @@ Blankr/
 
 Jedes Objekt trägt eine stabile ID, eine Lamport-Uhr und die ID seines letzten
 Schreibers. Beim Zusammenführen gewinnt die höhere Uhr, bei Gleichstand die
-größere Site-ID. Diese Regel ist kommutativ, assoziativ und idempotent —
+größere Site-ID. Diese Regel ist kommutativ, assoziativ und idempotent:
 Operationen dürfen also in beliebiger Reihenfolge, mehrfach oder verspätet
 eintreffen und ergeben trotzdem überall denselben Zustand. Gelöschtes
 hinterlässt einen Grabstein, damit eine verspätete Änderung nichts wiederbelebt.
@@ -363,7 +363,7 @@ hinterlässt einen Grabstein, damit eine verspätete Änderung nichts wiederbele
 Der Editor arbeitet intern weiterhin mit Array-Indizes; die Übersetzung nach
 außen passiert an genau einer Stelle in `store.setState`. Jede Änderung an den
 Ebenen wird dort mit dem Dokument abgeglichen und als Operationsfolge
-verschickt — keine der rund zwanzig Schreibstellen im Editor kann den Abgleich
+verschickt: keine der rund zwanzig Schreibstellen im Editor kann den Abgleich
 umgehen.
 
 Der Server hält dasselbe Dokument, wendet eingehende Operationen an und gibt
@@ -377,21 +377,21 @@ node --test "tests/**/*.test.mjs"   # JavaScript-Seite
 cd server && go test ./...          # Go-Seite
 ```
 
-Geprüft wird der Code aus `shared/`, `client/src/sync/` und `server/` direkt —
+Geprüft wird der Code aus `shared/`, `client/src/sync/` und `server/` direkt:
 inklusive Konvergenz zweier Clients, Idempotenz, Grabsteinen und der Frage, ob
 eine präparierte Board-ID aus dem Datenverzeichnis herausführen kann.
 
 **Zwei Implementierungen, eine Wahrheit.** Die Zusammenführung existiert
 zweimal: in JavaScript für den Browser und in Go für den Server. Damit sie
 nicht auseinanderlaufen, lesen beide Testläufe dieselbe Datei
-`shared/testvectors.json` und prüfen jeden Fall dreifach — vorwärts, rückwärts
+`shared/testvectors.json` und prüfen jeden Fall dreifach, vorwärts, rückwärts
 und mit doppelt zugestellten Operationen. Wer die Regel auf einer Seite
 ändert, ohne die andere anzupassen, bekommt sofort einen roten Testlauf.
 
 ## Grenzen
 
 - **Text wird als Ganzes zusammengeführt.** Ändern zwei Leute gleichzeitig
-  denselben Textblock, gewinnt der spätere Schreiber — es wird nicht
+  denselben Textblock, gewinnt der spätere Schreiber, es wird nicht
   zeichenweise gemischt.
 - **Sticky Notes und Chat werden nicht synchronisiert.** Beide bleiben lokal
   bzw. flüchtig.
@@ -405,12 +405,12 @@ geändert hat, steht in [CHANGELOG.md](CHANGELOG.md).
 
 ## Lizenz
 
-Business Source License 1.1 — siehe [LICENSE](LICENSE).
+Business Source License 1.1: siehe [LICENSE](LICENSE).
 
 Kurz gefasst: lesen, ändern, selbst betreiben und beitragen ist erlaubt,
 einschließlich Nutzung in der eigenen Organisation. Nicht erlaubt ist es, Blankr
 als kommerzielles Angebot für Dritte zu betreiben oder zu verkaufen. Am
 **10. August 2030** geht diese Version automatisch in die **Apache-2.0**-Lizenz über.
 
-BSL ist quelloffen, aber keine von der OSI anerkannte Open-Source-Lizenz —
+BSL ist quelloffen, aber keine von der OSI anerkannte Open-Source-Lizenz:
 GitHub weist sie deshalb als „Other" aus.

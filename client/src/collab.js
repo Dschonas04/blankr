@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════
-   Blankr — Board-Synchronisation
+   Blankr: Board-Synchronisation
    ═══════════════════════════════════════ */
 import {
   SITE,

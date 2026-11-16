@@ -45,7 +45,7 @@ Keine Weitergabe an Dritte. Blankr lädt keine Schriften, Skripte oder Bilder vo
 Kontodaten bis zur Löschung des Kontos. Boards bis zu ihrer Löschung durch den Eigentümer. Sitzungen enden spätestens nach der eingestellten Laufzeit.
 
 5. Deine Rechte
-Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch (Art. 15–21 DSGVO). Unter „Konto“ kannst du deine Daten jederzeit als Datei herunterladen und dein Konto samt deiner Boards löschen. Du hast außerdem das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.`
+Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch (Art. 15-21 DSGVO). Unter „Konto“ kannst du deine Daten jederzeit als Datei herunterladen und dein Konto samt deiner Boards löschen. Du hast außerdem das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.`
 
 func (s *server) rechtsDatei(name string) string {
 	return filepath.Join(s.cfg.daten, "rechtliches", name+".txt")

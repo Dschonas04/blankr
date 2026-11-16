@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════
-   Blankr — Aufrufe an den Server
+   Blankr: Aufrufe an den Server
    ═══════════════════════════════════════
 
    Alles, was an /api geht, laeuft hierueber. Drei Dinge sind dabei immer

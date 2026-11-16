@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════
-   Canvas — Shared Constants
+   Canvas: Shared Constants
    ═══════════════════════════════════════ */
 
 export const BG_SPACING = 24;

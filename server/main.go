@@ -263,7 +263,7 @@ func (s *server) sicht(b BoardMeta, k *Konto) boardSicht {
 		if besitzer, ok := s.konten.Konto(b.Owner); ok {
 			v.Besitzer = besitzer.Name
 		} else {
-			v.Besitzer = "–"
+			v.Besitzer = "-"
 		}
 	}
 	return v

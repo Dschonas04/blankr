@@ -1,5 +1,5 @@
 /**
- * LWW-Element-Set — der CRDT-Kern von Blankr.
+ * LWW-Element-Set: der CRDT-Kern von Blankr.
  *
  * Wird unveraendert von Client und Server benutzt, damit beide Seiten
  * garantiert dieselbe Zusammenfuehrung rechnen.

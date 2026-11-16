@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════
-   Blankr — External Store
+   Blankr: External Store
    useSyncExternalStore, ohne State-Bibliothek
    ═══════════════════════════════════════ */
 import { useSyncExternalStore } from 'react';

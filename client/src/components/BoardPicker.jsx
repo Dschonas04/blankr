@@ -82,7 +82,7 @@ export default function BoardPicker() {
       if (currentBoard === board.id) collab.disconnect();
       await refresh();
     } catch (err) {
-      showToast('Löschen nicht möglich — arbeitet gerade jemand darauf?');
+      showToast('Löschen nicht möglich: arbeitet gerade jemand darauf?');
     }
   };
 
@@ -156,7 +156,7 @@ export default function BoardPicker() {
 
         <p className="board-hint">
           Boards werden auf dem Server gespeichert und überstehen einen Neustart. Ohne
-          geöffnetes Board arbeitest du lokal — dieser Stand liegt nur in diesem Browser.
+          geöffnetes Board arbeitest du lokal, dieser Stand liegt nur in diesem Browser.
         </p>
       </div>
     </div>

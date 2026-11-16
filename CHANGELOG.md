@@ -2,7 +2,7 @@
 
 ## Unveröffentlicht
 
-## 1.0.0 – 2026-09-17
+## 1.0.0: 2026-09-17
 
 Erste Version für den geschäftlichen Einsatz.
 
