@@ -1,7 +1,8 @@
 module blankr
 
-go 1.26.0
+go 1.27.4
 
-require github.com/gorilla/websocket v1.5.3
-
-require golang.org/x/crypto v0.57.0
+require (
+	github.com/gorilla/websocket v1.5.3
+	golang.org/x/crypto v0.57.0
+)
