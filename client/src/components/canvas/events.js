@@ -7,7 +7,7 @@ import {
 } from './constants.js';
 import {
   drawBackground, renderStroke, drawSelectionBox,
-  drawRubberBand, drawAlignGuides, adaptColor
+  drawRubberBand, drawAlignGuides, adaptColor, labelColor
 } from './render.js';
 import {
   getBBox, getCenter, getConnectorAnchors, moveStroke,
@@ -687,7 +687,7 @@ export function setupCanvasEvents(canvas, setTextEdit) {
             const cy = (bb.y + bb.h / 2 + v.y) * v.scale + rect.top;
             setTextEdit({ editIdx: found, wx: bb.x + bb.w / 2, wy: bb.y + bb.h / 2,
               sx: cx - 50, sy: cy - 12, fontSize: s.fontSize || 14,
-              color: s.color, isLabel: true, initialText: s.label || '' });
+              color: labelColor(s, st.darkMode), isLabel: true, initialText: s.label || '' });
           }
         }
       } else if (st.tool === 'select' || st.tool === 'text') {

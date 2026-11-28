@@ -46,6 +46,17 @@ export function drawArrowHead(ctx, x1, y1, x2, y2, size) {
 }
 
 /** Adapt color for dark mode: invert near-black colors */
+// Beschriftung auf einer gefüllten Form: Kontrastfarbe statt der Füllfarbe,
+// sonst verschwindet der Text in der Fläche.
+export function labelColor(s, dark) {
+  if (!s.filled) return adaptColor(s.color || '#1e1e1e', dark);
+  const m = /^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i.exec((s.color || '').trim());
+  if (!m) return '#ffffff';
+  const [r, g, b] = m.slice(1).map(h => parseInt(h, 16) / 255)
+    .map(c => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4));
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b > 0.4 ? '#1e1e1e' : '#ffffff';
+}
+
 export function adaptColor(color, dark) {
   if (!dark) return color;
   if (!color) return '#fff';
@@ -191,7 +202,7 @@ export function renderStroke(ctx, s, view, dark) {
       const cx = tx(bb.x + bb.w / 2), cy = ty(bb.y + bb.h / 2);
       const fs = (s.fontSize || 14) * view.scale;
       ctx.font = `${fs}px Inter, system-ui, sans-serif`;
-      ctx.fillStyle = adaptColor(s.color || '#1e1e1e', dark);
+      ctx.fillStyle = labelColor(s, dark);
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       const labelLines = s.label.split('\n');

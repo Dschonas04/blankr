@@ -2,6 +2,21 @@
 
 ## Unveröffentlicht
 
+## 1.1.1: 2026-11-28
+
+### Behoben
+- Beschriftungen auf gefüllten Formen waren unsichtbar, weil der Text in der
+  Füllfarbe gezeichnet wurde. Er nimmt jetzt Weiß oder Dunkelgrau, je nachdem,
+  was auf der Fläche besser zu lesen ist, auch im Eingabefeld.
+- Besucher-IP hinter dem Proxy von rechts aus `X-Forwarded-For`,
+  `X-Real-IP` wird nicht mehr geglaubt.
+- SSO: HTML mit `html.EscapeString`, Rücksprungziel strenger geprüft.
+- gorilla/websocket auf d67f418 (GO-2026-6278).
+
+### Geändert
+- Neues Logo im Stil von Nexora.
+- Bilder und ein kurzer Rundgang in der README.
+
 ## 1.1.0: 2026-11-16
 
 ### Neu

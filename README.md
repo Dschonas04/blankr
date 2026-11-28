@@ -12,6 +12,16 @@ Blankr ist eine kollaborative, browserbasierte Whiteboard-Anwendung. Sie nutzt R
 
 Boards liegen auf dem Server und überstehen einen Neustart. Gleichzeitiges Bearbeiten wird über einen CRDT zusammengeführt, nicht über ein einfaches Weiterreichen von Ereignissen, auch nach einem Verbindungsabbruch sehen alle Beteiligten wieder denselben Stand.
 
+![Blankr in zwanzig Sekunden: Lena zeichnet einen Ablauf, Tom ist über einen Freigabe-Link dabei und zeichnet gleichzeitig mit](docs/bilder/rundgang.gif)
+
+*Zwanzig Sekunden: Lena zeichnet den Ablauf, Tom kommt über den Link zum
+Bearbeiten dazu und ergänzt Feedback, Pfeil und Haken, beide sehen sich live.*
+
+| Ein Board | Im Dunkeln | Die Boards |
+| --- | --- | --- |
+| ![Ein Board mit Kästen, Raute, Kreis, Pfeilen und Freihandstrichen](docs/bilder/board.png) | ![Dasselbe Board im dunklen Design](docs/bilder/dunkel.png) | ![Liste der Boards mit Anzeige, wer gerade online ist](docs/bilder/boards.png) |
+| Formen mit Beschriftung, Pfeile, Stift und Text. | Dunkles Design mit angepassten Strichfarben. | Benannte Boards auf dem Server, mit Online-Anzeige. |
+
 ## Inhalt
 
 - [Features](#features)
